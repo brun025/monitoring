@@ -1,0 +1,44 @@
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <button type="button" class="btn btn-dark" (click)="supportService.showModalInsert()">Cadastrar</button>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                                <thead class="bg-dark">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Email</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let support of supports">
+                                        <td>{{ support.name }}</td>
+                                        <td>{{ support.email }}</td>
+                                        <td>
+                                            <a href="javascript:void(0)" (click)="supportService.showModalEdit(support)">
+                                                <i class="fa fa-pencil"></i>
+                                            </a> | 
+                                            <a href="javascript:void(0)" (click)="supportService.showModalDelete(support.id)">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <support-new-modal></support-new-modal>
+    
+    <support-delete-modal></support-delete-modal>
+    
+    <support-edit-modal></support-edit-modal>
+        
+        

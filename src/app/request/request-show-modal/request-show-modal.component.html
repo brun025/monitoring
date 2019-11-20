@@ -1,0 +1,55 @@
+<form>
+    <modal>
+        <h5 modal-title>Pedido</h5>
+        <div modal-body>
+            <div class="form-group">
+                <label for="code">Código:</label>
+                <input type="text" class="form-control" id="code" value="{{dados.code}}" name="code">
+            </div>
+
+            <div class="form-group">
+                <label for="type_id">Tipo:</label>
+                <input type="text" class="form-control" id="type_id" value="{{dados.type_id}}" name="type_id">
+            </div>
+
+            <div class="form-group">
+                <label for="lab">Laboratório:</label>
+                <input type="text" class="form-control" id="lab" value="{{dados.lab}}" name="lab">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" class="form-control" id="status" value="{{dados.status}}" name="status">
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Quantidade:</label>
+                <input type="text" class="form-control" id="amount" value="{{dados.amount}}" name="status">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Data do pedido:</label>
+                <input type="text" class="form-control" id="date" value="{{dados.date | date: 'dd/MM/yyyy'}}" name="status">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" id="name" value="{{dados.name}}" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" value="{{dados.email}}" name="email" >
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea class="form-control" id="description" name="description" value="{{dados.description}}" cols="30" rows="5"></textarea>
+            </div>
+    
+        </div>
+        <div modal-footer>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+    </modal>
+</form>

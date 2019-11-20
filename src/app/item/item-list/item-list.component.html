@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                        <label>Pesquisar :<input type="text" [(ngModel)]="searchText" placeholder="Status ou Laboratório"></label>
+                    <button type="button" class="btn btn-dark" (click)="itemService.showModalInsert(types)">Cadastrar</button>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead class="bg-dark">
+                            <tr>
+                                <th>Status</th>
+                                <th>Código</th>
+                                <th>Laboratório</th>
+                                <th>Tipo</th>
+                                <th>Data</th>
+                                <th>Final</th>
+                                <th>Responsável</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of items | filter : searchText | paginate: { itemsPerPage: 3, currentPage: paginaAtual };">
+                                <td>{{ item.status }}</td>
+                                <td>{{ item.code }}</td>
+                                <td>{{ item.lab }}</td>
+                                <td>{{ item.type_name }}</td>
+                                <td>{{ item.date | date: 'dd/MM/yyyy' }}</td>
+                                <td>{{ item?.finalDate | date: 'dd/MM/yyyy' }}</td>
+                                <td>{{ item?.user_name }}</td>
+                                <td>
+                                    <a href="javascript:void(0)" (click)="itemService.showModalEdit(item, types)">
+                                        <i class="fa fa-pencil"></i>
+                                    </a> | 
+                                    <a href="javascript:void(0)" (click)="itemService.showModalDelete(item.id)">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<item-new-modal></item-new-modal>
+
+<item-delete-modal></item-delete-modal>
+
+<item-edit-modal></item-edit-modal>
+

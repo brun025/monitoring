@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Pedidos</h4>
+                    <!-- <button type="button" class="btn btn-dark" (click)="itemService.showModalInsert(types)">Cadastrar</button> -->
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead class="bg-dark">
+                            <tr>
+                                <th>Status</th>
+                                <th>Código</th>
+                                <th>Laboratório</th>
+                                <th>Tipo</th>
+                                <th>Quantidade</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of items | paginate: { itemsPerPage: 3, currentPage: paginaAtual };">
+                                <td>{{ item.status }}</td>
+                                <td>{{ item.code }}</td>
+                                <td>{{ item.lab }}</td>
+                                <td>{{ item.type_name }}</td>
+                                <td>{{ item.amount }}</td>
+                                <td>
+                                    <a href="javascript:void(0)" (click)="requestService.showModal(item)">
+                                        <i class="fa fa-eye"></i>
+                                    </a> |
+                                    <a href="javascript:void(0)" (click)="requestService.changeStatus(item, 'Concluído')">
+                                        <i class="fa fa-check"></i>
+                                    </a> | 
+                                    <a href="javascript:void(0)" (click)="requestService.changeStatus(item, 'Cancelado')">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<request-show-modal></request-show-modal>

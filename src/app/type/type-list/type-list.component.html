@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <button type="button" class="btn btn-dark" (click)="typeService.showModalInsert()">Cadastrar</button>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                            <thead class="bg-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let type of types">
+                                    <td>{{ type.name }}</td>
+                                    <td>{{ type.description }}</td>
+                                    <td>
+                                        <a href="javascript:void(0)" (click)="typeService.showModalEdit(type)">
+                                            <i class="fa fa-pencil"></i>
+                                        </a> | 
+                                        <a href="javascript:void(0)" (click)="typeService.showModalDelete(type.id)">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<type-new-modal></type-new-modal>
+
+<type-delete-modal></type-delete-modal>
+
+<type-edit-modal></type-edit-modal>
+    
+    

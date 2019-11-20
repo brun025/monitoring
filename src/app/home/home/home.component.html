@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+            <div class="col-12">
+                <!-- <p>
+                    Cuide dos equipamentos e nos reporte qualquer problema encontrado,
+                    assim manteremos um ambiente de estudos conservado...
+                </p> -->
+                <div class="reclame" style="text-align:center;">
+                    <img src="assets/img/assistencia-tecnica-santoandre-informatica.png" alt="suporte">
+                    <br><br>
+                    <strong>Equipamentos com problemas?</strong><br>
+                    <button type="button" class="btn btn-primary" (click)="formReclame()">Clique aqui!</button>
+                    <br><br><br>
+                </div>
+            </div> 
+            
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Acesso Restrito
+                    </div>
+
+                    <div class="card-body">
+                        <form (submit)="submit()">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" placeholder="email">
+                            </div>
+                
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" placeholder="senha">
+                            </div>
+    
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+    </div>
+</div>

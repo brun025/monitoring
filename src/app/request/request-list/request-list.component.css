@@ -1,0 +1,23 @@
+.card-header button{
+    float: right;
+}
+td>a>i.fa.fa-times{
+    color: red;
+}
+td>a>i.fa.fa-check{
+    color: green;
+}
+table thead{
+    color: white;
+}
+.container{
+   margin-top: 3%;
+}
+/* @media only screen and (max-width: 768px) { */
+    .card{
+        overflow-x: scroll;
+    }
+/* } */
+.card-body{
+    text-align: center;
+}

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <button type="button" class="btn btn-dark" (click)="coordinatorService.showModalInsert()">Cadastrar</button>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                            <thead class="bg-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let coordinator of coordinators">
+                                    <td>{{ coordinator.name }}</td>
+                                    <td>{{ coordinator.email }}</td>
+                                    <td>
+                                        <a href="javascript:void(0)" (click)="coordinatorService.showModalEdit(coordinator)">
+                                            <i class="fa fa-pencil"></i>
+                                        </a> | 
+                                        <a href="javascript:void(0)" (click)="coordinatorService.showModalDelete(coordinator.id)">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<coordinator-new-modal></coordinator-new-modal>
+
+<coordinator-delete-modal></coordinator-delete-modal>
+
+<coordinator-edit-modal></coordinator-edit-modal>
+    
+    

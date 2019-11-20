@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
+    <a class="navbar-brand" href="#">Lab monitoring</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/user/list']" *ngIf="role === 'admin'">Usuários</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/coordinator/list']" *ngIf="role === 'admin'">Coordenadores</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/support/list']" *ngIf="role === 'admin'">Suportes</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/type/list']" *ngIf="role === 'admin'">Tipos</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/item/list']" *ngIf="role === 'admin' || role === 'coordinator'">Reclamações</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/request/list']" *ngIf="role === 'admin' || role === 'support' || role === 'coordinator'">Pedidos</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/dashboard']" *ngIf="role === 'admin' || role === 'coordinator'">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" *ngIf="role === 'admin'  || role === 'support' || role === 'coordinator'">Sair</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="userName" *ngIf="role === 'admin'  || role === 'support' || role === 'coordinator'">
+      {{userName}}
+    </div>
+  </nav>

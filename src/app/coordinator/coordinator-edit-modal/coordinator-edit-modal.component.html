@@ -1,0 +1,20 @@
+<form (submit)="submit()">
+    <modal>
+        <h5 modal-title>Edição de coordenador</h5>
+        <div modal-body>
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" value="{{_coordinator?.name}}" id="nameEdit" name="name" [(ngModel)]="dados.name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" value="{{_coordinator?.email}}" id="emailEdit" name="email" [(ngModel)]="dados.email">
+            </div>
+        </div>
+        <div modal-footer>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
+        </div>
+    </modal>
+</form>

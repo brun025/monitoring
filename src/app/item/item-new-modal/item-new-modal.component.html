@@ -1,0 +1,56 @@
+<form (submit)="submit()">
+    <modal>
+        <h5 modal-title>Novo pedido</h5>
+        <div modal-body>
+            <div class="form-group">
+                <label for="code">Código:</label>
+                <input type="text" class="form-control" id="code" name="code" [(ngModel)]="item.code">
+            </div>
+
+            <div class="form-group">
+                <label>Tipo: </label>
+                <select class="form-control" name="type_id"  [(ngModel)]="item.type_id">
+                    <option value=""></option>
+                    <option *ngFor="let type of types" value="{{type.id}}">{{type.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="lab">Laboratório:</label>
+                <select class="form-control" id="lab" name="lab" [(ngModel)]="item.lab">
+                    <option value=""></option>
+                    <option value="LDC1">LDC1</option>
+                    <option value="LDC2">LDC2</option>
+                    <option value="LDC3">LDC3</option>
+                    <option value="LDC4">LDC4</option>
+                    <option value="LDC5">LDC5</option>
+                </select>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="amount">Quantidade:</label>
+                <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="item.amount">
+            </div> -->
+
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="item.name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="item.email">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea class="form-control" id="description" name="description" [(ngModel)]="item.description" cols="30" rows="5"></textarea>
+            </div>
+
+        </div>
+        <div modal-footer>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-primary">Incluir</button>
+        </div>
+    </modal>
+</form>

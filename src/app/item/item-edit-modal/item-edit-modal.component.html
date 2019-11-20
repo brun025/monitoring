@@ -1,0 +1,76 @@
+<form (submit)="submit()">
+    <modal>
+        <h5 modal-title>Edição de pedidos</h5>
+        <div modal-body>
+            <div class="form-group">
+                <label for="code">Código:</label>
+                <input type="text" class="form-control" id="code" value="{{_item?.code}}" name="code" [(ngModel)]="dados.code">
+            </div>
+
+            <div class="form-group">
+                <label>Tipo: </label>
+                <select class="form-control" name="type_id"  [(ngModel)]="dados.type_id">
+                    <option value=""></option>
+                    <option *ngFor="let type of types" value="{{type.id}}">{{type.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="lab">Laboratório:</label>
+                <select class="form-control" id="lab" name="lab" [(ngModel)]="dados.lab">
+                    <option value=""></option>
+                    <option value="LDC1">LDC1</option>
+                    <option value="LDC2">LDC2</option>
+                    <option value="LDC3">LDC3</option>
+                    <option value="LDC4">LDC4</option>
+                    <option value="LDC5">LDC5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" id="status" name="status" [(ngModel)]="dados.status">
+                    <option value=""></option>
+                    <option value="Aguardando">Aguardando</option>
+                    <option value="Concluída">Concluído</option>
+                    <option value="Cancelada">Cancelado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Quantidade:</label>
+                <input type="text" class="form-control" id="amount" value="{{_item?.amount}}" name="amount" [(ngModel)]="dados.amount">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Data do pedido:</label>
+                <input type="date" class="form-control" id="date" value="{{_item?.date}}" name="date" [(ngModel)]="dados.date">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Data do verificação:</label>
+                <input type="date" class="form-control" id="finalDate" value="{{_item?.finalDate}}" name="finalDate" [(ngModel)]="dados.finalDate">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" id="name" value="{{_item?.name}}" name="name" [(ngModel)]="dados.name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" value="{{_item?.email}}" name="email" [(ngModel)]="dados.email">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea class="form-control" id="description" name="description" value="{{_item?.description}}" [(ngModel)]="dados.description" cols="30" rows="5"></textarea>
+            </div>
+    
+        </div>
+        <div modal-footer>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
+        </div>
+    </modal>
+</form>
