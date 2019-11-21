@@ -34,7 +34,7 @@ export class CoordinatorService {
   }
 
   getCoordinators(){
-    const req = this.httpClient.get('http://127.0.0.1:3000/coordinators/').toPromise();
+    const req = this.httpClient.get('http://157.245.241.8:3000/coordinators/').toPromise();
 
     req.then((coordinators) => {
       this._coordinatorListComponent.coordinators = coordinators
@@ -42,7 +42,7 @@ export class CoordinatorService {
   }
 
   post(coordinator){
-    const req = this.httpClient.post("http://127.0.0.1:3000/coordinators", coordinator).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/coordinators", coordinator).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta
@@ -55,7 +55,7 @@ export class CoordinatorService {
 
   postUser(coordinator){
     coordinator.role = 'coordinator'
-    const req = this.httpClient.post("http://127.0.0.1:3000/users", coordinator).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/users", coordinator).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta
@@ -67,7 +67,7 @@ export class CoordinatorService {
   }
 
   destroy(id) {
-    const req = this.httpClient.delete("http://127.0.0.1:3000/coordinators/" + id).toPromise();
+    const req = this.httpClient.delete("http://157.245.241.8:3000/coordinators/" + id).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;
@@ -79,7 +79,7 @@ export class CoordinatorService {
 
   update(coordinator, dados) {
     // console.log(dados)
-    const req = this.httpClient.patch("http://127.0.0.1:3000/coordinators/" + coordinator.id, dados).toPromise();
+    const req = this.httpClient.patch("http://157.245.241.8:3000/coordinators/" + coordinator.id, dados).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;

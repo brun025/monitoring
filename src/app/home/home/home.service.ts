@@ -14,7 +14,7 @@ export class HomeService {
               protected navbarService: NavbarService) { }
 
   login(user){
-    const req = this.httpClient.post("http://127.0.0.1:3000/login/", user).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/login/", user).toPromise();
 
     req.then((user) => {
       this.user = user;

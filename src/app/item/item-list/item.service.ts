@@ -39,7 +39,7 @@ export class ItemService {
     }
 
     getTypes(){
-      const req = this.httpClient.get('http://127.0.0.1:3000/types/').toPromise();
+      const req = this.httpClient.get('http://157.245.241.8:3000/types/').toPromise();
   
       req.then((types) => {
         this._itemListComponent.types = types;
@@ -47,7 +47,7 @@ export class ItemService {
     }
   
     getItems(){
-      const req = this.httpClient.get('http://127.0.0.1:3000/items/').toPromise();
+      const req = this.httpClient.get('http://157.245.241.8:3000/items/').toPromise();
   
       req.then((items) => {
         // console.log(items)
@@ -61,7 +61,7 @@ export class ItemService {
       item.amount = 1;
       item.date = this.obterDataAtual();
 
-      const req = this.httpClient.post("http://127.0.0.1:3000/items", item).toPromise();
+      const req = this.httpClient.post("http://157.245.241.8:3000/items", item).toPromise();
   
       req.then((resposta) => {
         // console.log(resposta)
@@ -73,7 +73,7 @@ export class ItemService {
     }
   
     destroy(id) {
-      const req = this.httpClient.delete("http://127.0.0.1:3000/items/" + id).toPromise();
+      const req = this.httpClient.delete("http://157.245.241.8:3000/items/" + id).toPromise();
   
       req.then((resposta) => {
         this.resposta = resposta;
@@ -92,7 +92,7 @@ export class ItemService {
 
       dados.user_id = item.user_id;
       // console.log(dados)
-      const req = this.httpClient.patch("http://127.0.0.1:3000/items/" + item.id, dados).toPromise();
+      const req = this.httpClient.patch("http://157.245.241.8:3000/items/" + item.id, dados).toPromise();
   
       req.then((resposta) => {
         console.log(resposta)

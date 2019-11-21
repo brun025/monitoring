@@ -19,7 +19,7 @@ export class FormService {
   sendMail(item){
     item.message = 'Recebemos seu pedido de suporte, está em fase de análise, em breve retornaremos contato. Obrigado!'
     item.subject = 'Pedido recebido'
-    const req = this.httpClient.post('http://127.0.0.1:3000/sendMail/', item).toPromise();
+    const req = this.httpClient.post('http://157.245.241.8:3000/sendMail/', item).toPromise();
 
     req.then((resposta) => {
       console.log(resposta)
@@ -30,7 +30,7 @@ export class FormService {
 
   getItem(_item){
     // console.log(item.code)
-    const req = this.httpClient.get('http://127.0.0.1:3000/items/code/' + _item.code).toPromise();
+    const req = this.httpClient.get('http://157.245.241.8:3000/items/code/' + _item.code).toPromise();
 
     req.then((item) => {
       if(isObject(item[0])){
@@ -48,7 +48,7 @@ export class FormService {
     // console.log(item)
     item.amount += 1;
     // console.log(item.amount)
-    const req = this.httpClient.patch('http://127.0.0.1:3000/items/code/', item).toPromise();
+    const req = this.httpClient.patch('http://157.245.241.8:3000/items/code/', item).toPromise();
 
     req.then((resposta) => {
       console.log(resposta)
@@ -59,7 +59,7 @@ export class FormService {
   };
 
   getTypes(){
-    const req = this.httpClient.get('http://127.0.0.1:3000/types/').toPromise();
+    const req = this.httpClient.get('http://157.245.241.8:3000/types/').toPromise();
 
     req.then((types) => {
       this._formComponent.types = types;
@@ -72,7 +72,7 @@ export class FormService {
     item.amount = 1;
     item.date = this.obterDataAtual();
 
-    const req = this.httpClient.post("http://127.0.0.1:3000/items", item).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/items", item).toPromise();
 
     req.then((resposta) => {
       console.log(resposta)

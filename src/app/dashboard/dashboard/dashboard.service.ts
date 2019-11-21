@@ -32,7 +32,7 @@ export class DashboardService {
 
   options: any
 
-  private url = 'http://127.0.0.1:3000';
+  private url = 'http://157.245.241.8:3000';
   lineAguardando = [0,0,0,0,0,0,0,0,0,0,0,0];
   lineCancelado = [0,0,0,0,0,0,0,0,0,0,0,0];
   lineConcluido = [0,0,0,0,0,0,0,0,0,0,0,0];

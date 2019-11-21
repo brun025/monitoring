@@ -37,7 +37,7 @@ export class RequestService {
     }
   
     getItems(){
-      const req = this.httpClient.get('http://127.0.0.1:3000/request-items/').toPromise();
+      const req = this.httpClient.get('http://157.245.241.8:3000/request-items/').toPromise();
   
       req.then((items) => {
         this._requestListComponent.items = items
@@ -56,7 +56,7 @@ export class RequestService {
         dados.user_id = item.user_id;
       }
       // console.log(dados)
-      const req = this.httpClient.patch("http://127.0.0.1:3000/items/" + item.id, dados).toPromise();
+      const req = this.httpClient.patch("http://157.245.241.8:3000/items/" + item.id, dados).toPromise();
   
       req.then((resposta) => {
         // console.log(resposta)

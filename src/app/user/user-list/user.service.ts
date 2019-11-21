@@ -32,7 +32,7 @@ export class UserService {
   }
 
   getUsers(){
-    const req = this.httpClient.get('http://127.0.0.1:3000/users/').toPromise();
+    const req = this.httpClient.get('http://157.245.241.8:3000/users/').toPromise();
 
     req.then((users) => {
       this._userListComponent.users = users
@@ -40,7 +40,7 @@ export class UserService {
   }
 
   post(user){
-    const req = this.httpClient.post("http://127.0.0.1:3000/users", user).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/users", user).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta
@@ -52,7 +52,7 @@ export class UserService {
   }
 
   destroy(id) {
-    const req = this.httpClient.delete("http://127.0.0.1:3000/users/" + id).toPromise();
+    const req = this.httpClient.delete("http://157.245.241.8:3000/users/" + id).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;
@@ -64,7 +64,7 @@ export class UserService {
 
   update(user, dados) {
     console.log(user.id)
-    const req = this.httpClient.patch("http://127.0.0.1:3000/users/" + user.id, dados).toPromise();
+    const req = this.httpClient.patch("http://157.245.241.8:3000/users/" + user.id, dados).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;

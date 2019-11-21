@@ -31,7 +31,7 @@ export class SupportService {
   }
 
   getSupports(){
-    const req = this.httpClient.get('http://127.0.0.1:3000/supports/').toPromise();
+    const req = this.httpClient.get('http://157.245.241.8:3000/supports/').toPromise();
 
     req.then((supports) => {
       this._supportListComponent.supports = supports
@@ -39,7 +39,7 @@ export class SupportService {
   }
 
   post(support){
-    const req = this.httpClient.post("http://127.0.0.1:3000/supports", support).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/supports", support).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta
@@ -52,7 +52,7 @@ export class SupportService {
 
   postUser(support){
     support.role = 'support'
-    const req = this.httpClient.post("http://127.0.0.1:3000/users", support).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/users", support).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta
@@ -64,7 +64,7 @@ export class SupportService {
   }
 
   destroy(id) {
-    const req = this.httpClient.delete("http://127.0.0.1:3000/supports/" + id).toPromise();
+    const req = this.httpClient.delete("http://157.245.241.8:3000/supports/" + id).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;
@@ -76,7 +76,7 @@ export class SupportService {
 
   update(support, dados) {
     // console.log(dados)
-    const req = this.httpClient.patch("http://127.0.0.1:3000/supports/" + support.id, dados).toPromise();
+    const req = this.httpClient.patch("http://157.245.241.8:3000/supports/" + support.id, dados).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;

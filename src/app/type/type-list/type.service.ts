@@ -32,7 +32,7 @@ export class TypeService {
   }
 
   getTypes(){
-    const req = this.httpClient.get('http://127.0.0.1:3000/types/').toPromise();
+    const req = this.httpClient.get('http://157.245.241.8:3000/types/').toPromise();
 
     req.then((types) => {
       this._typeListComponent.types = types
@@ -40,7 +40,7 @@ export class TypeService {
   }
 
   post(type){
-    const req = this.httpClient.post("http://127.0.0.1:3000/types", type).toPromise();
+    const req = this.httpClient.post("http://157.245.241.8:3000/types", type).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta
@@ -52,7 +52,7 @@ export class TypeService {
   }
 
   destroy(id) {
-    const req = this.httpClient.delete("http://127.0.0.1:3000/types/" + id).toPromise();
+    const req = this.httpClient.delete("http://157.245.241.8:3000/types/" + id).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;
@@ -64,7 +64,7 @@ export class TypeService {
 
   update(type, dados) {
     console.log(type.id)
-    const req = this.httpClient.patch("http://127.0.0.1:3000/types/" + type.id, dados).toPromise();
+    const req = this.httpClient.patch("http://157.245.241.8:3000/types/" + type.id, dados).toPromise();
 
     req.then((resposta) => {
       this.resposta = resposta;
