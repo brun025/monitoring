@@ -243,8 +243,8 @@ console.log('API funcionando!');
 function execSQLQuery(sqlQry, res) {
     const connection = mysql.createConnection({
 
-        // host: '157.245.241.8',
-        host: 'localhost',
+        host: '157.245.241.8',
+        // host: 'localhost',
         port: 3306,
         user: 'root',
         password: 'root',
