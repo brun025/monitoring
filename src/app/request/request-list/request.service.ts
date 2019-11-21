@@ -27,7 +27,7 @@ export class RequestService {
     sendMail(item){
       item.message = 'Seu pedido de manutenção foi concluído com sucesso! Agradecemos seu contato!'
       item.subject = 'Pedido concluído'
-      const req = this.httpClient.post('http://127.0.0.1:3000/sendMail/', item).toPromise();
+      const req = this.httpClient.post('http://157.245.241.8:3000/sendMail/', item).toPromise();
   
       req.then((resposta) => {
         console.log(resposta)

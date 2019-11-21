@@ -60,7 +60,7 @@ export class DashboardService {
   getRequestStatus(){
     // console.log(this.url)
 
-    const req = this.httpClient.get(`${this.url}/items/`).toPromise();
+    const req = this.httpClient.get(`${this.url}/items-dash/`).toPromise();
 
     req.then((items) => {
       // console.log(items)
@@ -82,6 +82,8 @@ export class DashboardService {
 
         //Line graph
       }
+      // console.log(this.status.aguardando)
+
 
       // this._pizzaGraphComponent.dados = this.status;
       // this.dashboardComponent.init = true;

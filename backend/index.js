@@ -150,6 +150,11 @@ router.get('/items/:id?', (req, res) => {
     execSQLQuery('select item.*,t.name as type_name,u.name as user_name from item join type as t on t.id=item.type_id join user as u on u.id=item.user_id' + filter, res);
 })
 
+//Item
+router.get('/items-dash', (req, res) => {
+    execSQLQuery('select *from item', res);
+})
+
 router.get('/items/code/:code', (req, res) => {
     let code = req.params.code;
     // console.log(code)
@@ -168,7 +173,7 @@ router.patch('/items/code', (req, res) => {
 router.post('/items', (req, res) => {
     const code = req.body.code.substring(0, 150);
     const lab = req.body.lab.substring(0, 10);
-    const status = req.body.status.substring(0, 25);
+    const status = 'Aguardando';
     const date = req.body.date
     const amount = parseInt(req.body.amount)
     const name = req.body.name.substring(0, 150);
@@ -221,7 +226,7 @@ router.post('/sendMail', (req, res) => {
       }));
       
       var mailOptions = {
-        from: 'teste@gmail.com',
+        from: 'brunofelipedk@unifei.edu.br',
         to: req.body.email,
         subject: req.body.subject,
         text: req.body.message
