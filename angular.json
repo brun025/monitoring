@@ -63,7 +63,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "port": 8000,
+            "port": 8080,
             "browserTarget": "ngnodemysql:build"
           },
           "configurations": {
