@@ -206,7 +206,7 @@ router.delete('/items/:id', (req, res) => {
 
 //Item
 router.get('/request-items/', (req, res) => {
-    execSQLQuery('select item.*,t.name as type_name from item join type as t on t.id=item.type_id where item.status="Aguardando"', res);
+    execSQLQuery('select item.*,t.name as type_name from item join type as t on t.id=item.type_id where item.status="Aguardando" order by item.amount desc', res);
 })
 
 router.post('/sendMail', (req, res) => {
